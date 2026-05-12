@@ -171,7 +171,7 @@ public class MenuPrincipal {
                     System.exit(0);
                 }
 
-                default -> throw new IllegalArgumentException(RED + "Opción incorrecta.");
+                default -> System.out.println(RED + "⚠ Opción incorrecta. Por favor, ingresá un número del 1 al 8." + RESET);
             }
 
         }
