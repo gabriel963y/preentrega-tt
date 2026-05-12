@@ -31,8 +31,7 @@ public class MenuPrincipal {
         List<Producto> productos = inventario.listarProductos();
 
         while (true) {
-
-            int opcion = ScannerUtils.capturarNumero(YELLOW + """
+            System.out.println(GREEN + """
               ╔══════════════════════════════════════╗
               ║         GESTIÓN DE PRODUCTOS         ║
               ╠══════════════════════════════════════╣
@@ -47,7 +46,8 @@ public class MenuPrincipal {
               ║ 7. Listar pedidos                    ║
               ║ 8. Salir                             ║
               ╚══════════════════════════════════════╝
-              Opción:\s""" + RESET);
+              """);
+            int opcion = ScannerUtils.capturarNumero(YELLOW + "Opción: " + RESET);
 
 
             switch (opcion) {

@@ -62,7 +62,7 @@ public class InventarioService {
         Producto productoNuevo = productoOpt.get();
 
         while (true) {
-            int opcion = ScannerUtils.capturarNumero(Colores.YELLOW + """
+            System.out.println(Colores.GREEN + """
                     ╔══════════════════════════════════════╗
                     ║          ACTUALIZAR PRODUCTO         ║
                     ╠══════════════════════════════════════╣
@@ -72,9 +72,8 @@ public class InventarioService {
                     ║ 3. Stock                             ║
                     ║ 4. Salir                             ║
                     ╚══════════════════════════════════════╝
-                    Opcion:
-                   """ + Colores.RESET);
-
+                    """);
+            int opcion = ScannerUtils.capturarNumero(Colores.YELLOW + "Opcion: " + Colores.RESET);
 
             switch (opcion) {
                 case 1 -> {
@@ -110,15 +109,16 @@ public class InventarioService {
     public void eliminarProducto(int idProducto) {
         buscarPorId(idProducto).ifPresentOrElse(
                 producto -> {
-                    int opcion = ScannerUtils.capturarNumero(Colores.RED + """
-                   ╔══════════════════════════════════════╗
-                   ║     DESEA ELIMINAR EL PRODUCTO?      ║
-                   ╠══════════════════════════════════════╣
-                   ║   1. Sí                              ║
-                   ║   2. No                              ║
-                   ╚══════════════════════════════════════╝
-                   Opcion:
-                   """);
+                    System.out.println(Colores.GREEN + """
+                           ╔══════════════════════════════════════╗
+                           ║     DESEA ELIMINAR EL PRODUCTO?      ║
+                           ╠══════════════════════════════════════╣
+                           ║   1. Sí                              ║
+                           ║   2. No                              ║
+                           ╚══════════════════════════════════════╝
+                           """);
+                    int opcion = ScannerUtils.capturarNumero(Colores.RED + "Opcion: ");
+
                     if (opcion == 1) {
                         productos.remove(producto);
                         System.out.println(Colores.GREEN);

@@ -14,7 +14,7 @@ public class ScannerUtils {
     public static int capturarNumero(String mensaje) {
         System.out.printf("%s", mensaje);
         while (!SCANNER.hasNextInt()){
-            System.out.println(Colores.RED + "El dato ingresado es inválido. "  + Colores.RESET + mensaje);
+            System.out.println(Colores.RED + "El dato ingresado es inválido.\n"  + Colores.RESET + mensaje);
             SCANNER.next();
         }
         int dato = SCANNER.nextInt();
